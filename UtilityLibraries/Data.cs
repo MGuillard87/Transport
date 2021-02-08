@@ -15,7 +15,8 @@ namespace Transport
         // requêtes: Liste des lignes de transport à proximité d'un point
         public List<ListeTransportAutour> LigneTransportAutourDeserialization()
         {
-            RequeteListeTransportAutour resqueteListeAutour = new RequeteListeTransportAutour();
+            ISendRequest sendRequest = new SendRequest();
+            RequeteListeTransportAutour resqueteListeAutour = new RequeteListeTransportAutour(sendRequest);
             string reponse = resqueteListeAutour.listeTransportAutour();
             
 /*            Console.WriteLine(responseFromServer);

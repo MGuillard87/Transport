@@ -14,7 +14,12 @@ namespace Transport
         private string longitudeX = "5.726898670196533";
         private string latitudeY = "45.1853141784668";
         private string distanceAutour = "400";
-        
+        private ISendRequest sendRequest;
+
+        public RequeteListeTransportAutour(ISendRequest sendRequest)
+        {
+            this.sendRequest = sendRequest;
+        }
 
         public string genererUrlListeTransportAutour(string longitudeX, string latitudeY, string distanceAutour)
         {
@@ -28,10 +33,10 @@ namespace Transport
         
         public string listeTransportAutour()
         {
-            ISendRequest request = new SendRequest();
-            string uriListeTransportAutour = this.genererUrlListeTransportAutour(longitudeX, latitudeY, distanceAutour);
             
-            string response = request.doRequest(uriListeTransportAutour);
+            string uriListeTransportAutour = this.genererUrlListeTransportAutour(longitudeX, latitudeY, distanceAutour);
+            // utilise l'attribut de type ISendRequest sendResquest
+            string response = this.sendRequest.doRequest(uriListeTransportAutour);
             // Afficher le status
             //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
             return response;

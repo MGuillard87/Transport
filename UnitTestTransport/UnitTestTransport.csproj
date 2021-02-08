@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fakes\FakeSendRequest.cs" />
-    <Compile Include="NomTransportUnitTest.cs" />
+    <Compile Include="SendRequestUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
