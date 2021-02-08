@@ -22,12 +22,12 @@ namespace Transport
                 return URLListeLignesTransport;
             }
 
-            public WebResponse ListeLignesTransport()
+            public string ListeLignesTransport()
             {
                 ISendRequest request = new SendRequest();
                 string uriListeLignesTransport = this.genererUrlListeLignesTransport(codes);
 
-                WebResponse response = request.doRequest(uriListeLignesTransport);
+                string response = request.doRequest(uriListeLignesTransport);
                 // Afficher le status
                 //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
                 return response;

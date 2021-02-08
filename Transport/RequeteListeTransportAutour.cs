@@ -26,12 +26,12 @@ namespace Transport
             return URLListeTransportAutour;
         }
         
-        public WebResponse listeTransportAutour()
+        public string listeTransportAutour()
         {
             ISendRequest request = new SendRequest();
             string uriListeTransportAutour = this.genererUrlListeTransportAutour(longitudeX, latitudeY, distanceAutour);
             
-            WebResponse response = request.doRequest(uriListeTransportAutour);
+            string response = request.doRequest(uriListeTransportAutour);
             // Afficher le status
             //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
             return response;

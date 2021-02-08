@@ -11,6 +11,6 @@ namespace Transport
     public interface ISendRequest
     {
 
-        WebResponse doRequest(string uriListeTransportAutour);
+        string doRequest(string uriListeTransportAutour);
     }
 }

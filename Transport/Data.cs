@@ -16,20 +16,11 @@ namespace Transport
         public List<ListeTransportAutour> LigneTransportAutourDeserialization()
         {
             RequeteListeTransportAutour resqueteListeAutour = new RequeteListeTransportAutour();
-            WebResponse reponse = resqueteListeAutour.listeTransportAutour();
-            // Récupère le flux contenant le contenu renvoyé par le serveur
-            // Ouverture du flux à l'aide d'un StreamReader pour un accès facile          
-            // Lecture du contenu
-            // Affichage du contenu
-            Stream dataStream = reponse.GetResponseStream();
-
-            // Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            // Read the content.
-            string responseFromServer = reader.ReadToEnd();
+            string reponse = resqueteListeAutour.listeTransportAutour();
+            
 /*            Console.WriteLine(responseFromServer);
             Console.ReadLine();*/
-            List<ListeTransportAutour> data = JsonConvert.DeserializeObject<List<ListeTransportAutour>>(responseFromServer);
+            List<ListeTransportAutour> data = JsonConvert.DeserializeObject<List<ListeTransportAutour>>(reponse);
             return data;
         }
 
@@ -38,20 +29,10 @@ namespace Transport
         public List<ListeLignesTransport> ListeLignesTransportDeserialization()
         {
             RequeteListeLignesTransport resqueteDescriptionLigneTransport = new RequeteListeLignesTransport();
-            WebResponse reponse = resqueteDescriptionLigneTransport.ListeLignesTransport();
-            // Récupère le flux contenant le contenu renvoyé par le serveur
-            // Ouverture du flux à l'aide d'un StreamReader pour un accès facile          
-            // Lecture du contenu
-            // Affichage du contenu
-            Stream dataStream = reponse.GetResponseStream();
-
-            // Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            // Read the content.
-            string responseFromServer = reader.ReadToEnd();
+            string reponse = resqueteDescriptionLigneTransport.ListeLignesTransport();
 /*            Console.WriteLine(responseFromServer);
             Console.ReadLine();*/
-            List<ListeLignesTransport> data = JsonConvert.DeserializeObject<List<ListeLignesTransport>>(responseFromServer);
+            List<ListeLignesTransport> data = JsonConvert.DeserializeObject<List<ListeLignesTransport>>(reponse);
             return data;
         }
 
