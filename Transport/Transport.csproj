@@ -49,20 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListeLignesTransport.cs" />
-    <Compile Include="RequeteListeLignesTransport.cs" />
-    <Compile Include="ListeTransportAutour.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="ISendRequest.cs" />
-    <Compile Include="RequeteListeTransportAutour.cs" />
-    <Compile Include="OffLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilityLibraries\UtilityLibraries.csproj">
+      <Project>{3f1e9021-08b4-423e-844a-413b2d15ba29}</Project>
+      <Name>UtilityLibraries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
