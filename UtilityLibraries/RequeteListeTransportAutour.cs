@@ -16,10 +16,17 @@ namespace Transport
         private string distanceAutour = "400";
         private ISendRequest sendRequest;
 
+        public RequeteListeTransportAutour()
+            : this(new SendRequest())
+        {
+        }
+
         public RequeteListeTransportAutour(ISendRequest sendRequest)
         {
             this.sendRequest = sendRequest;
         }
+
+        
 
         public string genererUrlListeTransportAutour(string longitudeX, string latitudeY, string distanceAutour)
         {
@@ -33,7 +40,6 @@ namespace Transport
         
         public string listeTransportAutour()
         {
-            
             string uriListeTransportAutour = this.genererUrlListeTransportAutour(longitudeX, latitudeY, distanceAutour);
             // utilise l'attribut de type ISendRequest sendResquest
             string response = this.sendRequest.doRequest(uriListeTransportAutour);

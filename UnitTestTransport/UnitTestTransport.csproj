@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fakes\FakeSendRequest.cs" />
-    <Compile Include="SendRequestUnitTest.cs" />
+    <Compile Include="RequestUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +63,10 @@
     <ProjectReference Include="..\Transport\Transport.csproj">
       <Project>{ee320b32-0196-4c3a-9e70-f6815c026c33}</Project>
       <Name>Transport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityLibraries\UtilityLibraries.csproj">
+      <Project>{3f1e9021-08b4-423e-844a-413b2d15ba29}</Project>
+      <Name>UtilityLibraries</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
